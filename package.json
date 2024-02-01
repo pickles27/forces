@@ -1,0 +1,23 @@
+{
+  "name": "forces",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch & node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pickles27/forces.git"
+  },
+  "author": "Sarah Pickrahn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pickles27/forces/issues"
+  },
+  "homepage": "https://github.com/pickles27/forces#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "typescript": "^5.2.2"
+  }
+}

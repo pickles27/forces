@@ -52,7 +52,7 @@ const isCollisionY = (bodyState: Body) =>
   bodyState.position[y] < 0 ||
   bodyState.position[y] * PIXELS_PER_INCH >= window.innerHeight;
 
-const handleBounce = (bodyState: Body) => {
+const handleBounce = (bodyState: Body, worldState: World) => {
   if (isCollisionX(bodyState)) {
     // handle bounce on sides
 
@@ -60,6 +60,7 @@ const handleBounce = (bodyState: Body) => {
     console.log("bounced x: ", bodyState);
     bodyState.initialVelocity[x] = -bodyState.velocity[x];
     bodyState.initialPosition = [...bodyState.position];
+    // worldState.elapsedTimeInMs =
   }
   if (isCollisionY(bodyState)) {
     // handle bounce on top/bottom
@@ -102,7 +103,7 @@ const handleTick = (bodyState: Body, worldState: World) => {
   bodyState.velocity = getVelocity(bodyState, worldState);
   bodyState.position = getPosition(bodyState, worldState);
 
-  handleBounce(bodyState);
+  handleBounce(bodyState, worldState);
 };
 
 console.log("starting forces script");
